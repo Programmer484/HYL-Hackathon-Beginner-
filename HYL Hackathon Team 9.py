@@ -3,6 +3,7 @@
 
 import pygame
 import os
+import inputbox
 
 img_dir = os.path.join('images')
 
@@ -63,18 +64,36 @@ class Unit(pygame.sprite.Sprite):
 
 class Player(Unit):
   def __init__(self, img, x, y, scale):
-    Unit.__init__(self, img, x, y, scale)
-    
-  def update(self):
-    pass  
-  def playercommands():
-  #code to recieve player commands entered in console prior to running the level
-    pass
+  	Unit.__init__(self, img, x, y, scale)
 
-  
+		
+  def update(self):
+    self.controller()
+		pass
+      
+  def controller(self):
+		input_box1 = InputBox(100, 100, 140, 32)
+		#e.g console input could be like: "player.move(left, 3)"
+
+		
+  def move(self, direction, distance):
+    if direction == "left":
+			self.rect.x += distance * 25
+		elif direction == "right":
+			self.rect.x -= distance * 25
+		elif direction == "down":
+			self.rect.y += distance * 25
+		elif direction == "up":
+			self.rect.y -= distance * 25
+			
+  def attack(self):
+    pass
+		
+    
 class Enemy(Unit):
   def __init__(self):
     pass
+
     
 class Obstacle:
   def __init__(self):
@@ -101,12 +120,12 @@ def main():
   pygame.quit()
 
 #GROUPS
-#Allows us to do things like check for player collision against all sprites in the obstacle group
 
 backgrounds = pygame.sprite.Group()
 obstacles = pygame.sprite.Group()
 units = pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
+
 
 player = pygame.image.load(os.path.join(img_dir, "player.png")).convert()
 map = pygame.image.load(os.path.join(img_dir, "map.png")).convert()
@@ -114,6 +133,7 @@ map = pygame.image.load(os.path.join(img_dir, "map.png")).convert()
 #creating instance of player object
 P1 = Player(player, 325, 25, 1)
 map = Map(map, 300, 0, 500, 500)
+
 #Run the mainloop
 if __name__ == "__main__":
   main()
