@@ -29,29 +29,21 @@ def main1(n):
 
     total= ttk.Label(window, text="0")
 
-    Label(f1,  text='insert para related to topic here').grid(row=1,column=2)
-    Label(f1, text="question 1").grid(row=2,column=2)
-    Button(f1, text="option 1 -correct").bind(correct)
-    Button(f1, text="option 1 -correct").grid(row=3,column=1)
-    Button(f1, text="option 2 - incorrect", command=incorrect).grid(row=3,column=2)
-    Button(f1, text="option 3 - incorrect", command=incorrect).grid(row=3,column=3)
 
+    Label(f2, text='''Move character to green square using move commands.\n E.g. self.move("right", 3) will move character 3 squares right''').grid(row=2,column=2)
+    Button(f2, text="Placeholder",command=incorrect2).grid(row=3,column=1)
+    Button(f2, text="Placeholder", command=correct2).grid(row=3,column=2)
+    Button(f2, text="Placeholder", command=incorrect2).grid(row=3,column=3)
 
-    Label(f2, text="What is Turtle?").grid(row=2,column=2)
-    Button(f2, 
-    text="GuidedUserInterface",command=incorrect2).grid(row=3,column=1)
-    Button(f2, text="Module", command=correct2).grid(row=3,column=2)
-    Button(f2, text="Boolean Value", command=incorrect2).grid(row=3,column=3)
+    Label(f3, text="Placeholder").grid(row=2,column=2)
+    Button(f3, text="Placeholder",command=incorrect3).grid(row=3,column=1)
+    Button(f3, text="Placeholder", command=correct3).grid(row=3,column=2)
+    Button(f3, text="Placeholder", command=incorrect3).grid(row=3,column=3)
 
-    Label(f3, text="What does the 'Print' command do?").grid(row=2,column=2)
-    Button(f3, text="Creater a window",command=incorrect3).grid(row=3,column=1)
-    Button(f3, text="Show a message in the Python Shell", command=correct3).grid(row=3,column=2)
-    Button(f3, text="Print to the printer", command=incorrect3).grid(row=3,column=3)
-
-    Label(f4, text="What is the moniter?").grid(row=2,column=2)
-    Button(f4, text="A display that shows what the computer is doing",command=correct4).grid(row=3,column=1)
-    Button(f4, text="A circut board", command=incorrect4).grid(row=3,column=2)
-    Button(f4, text="A Program", command=incorrect4).grid(row=3,column=3)
+    Label(f4, text="Placeholder").grid(row=2,column=2)
+    Button(f4, text="Placeholder",command=correct4).grid(row=3,column=1)
+    Button(f4, text="Placeholder", command=incorrect4).grid(row=3,column=2)
+    Button(f4, text="Placeholder", command=incorrect4).grid(row=3,column=3)
 
 
     return total
