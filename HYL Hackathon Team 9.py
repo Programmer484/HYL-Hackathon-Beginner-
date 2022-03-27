@@ -3,7 +3,7 @@
 
 import pygame
 import os
-import inputbox
+import inputbox as ib
 
 img_dir = os.path.join('images')
 
@@ -69,23 +69,23 @@ class Player(Unit):
 		
   def update(self):
     self.controller()
-		pass
+		
       
   def controller(self):
-    input_box1 = InputBox(100, 100, 140, 32)
+    pass
     #e.g console input could be like: "player.move(left, 3)"
 
 		
   def move(self, direction, distance):
     if direction == "left":
-	    self.rect.x += distance * 25
+    	self.rect.x += distance * 25
     elif direction == "right":
-	    self.rect.x -= distance * 25
+    	self.rect.x -= distance * 25
     elif direction == "down":
-	    self.rect.y += distance * 25
+    	self.rect.y += distance * 25
     elif direction == "up":
-	    self.rect.y -= distance * 25
-			
+    	self.rect.y -= distance * 25
+    			
   def attack(self):
     pass
 		
@@ -102,20 +102,28 @@ class Obstacle:
 
 def main():
   
-  
+  global input_boxes
   run = True
   while run:
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
         run = False
+      for box in input_boxes:
+          box.handle_event(event)
 
-    #redraw background
+      
     win.fill((255, 255, 255))
   
     all_sprites.update()
     backgrounds.draw(win)
     all_sprites.draw(win)
-    pygame.display.update()
+
+    for box in input_boxes:
+        box.update()
+    for box in input_boxes:
+        box.draw(win)
+
+    pygame.display.flip()
     
   pygame.quit()
 
@@ -133,6 +141,8 @@ map = pygame.image.load(os.path.join(img_dir, "map.png")).convert()
 #creating instance of player object
 
 P1 = Player(player, 325, 25, 1)
+input_box1 = ib.InputBox(100, 100, 140, 32)
+input_boxes = [input_box1]
 map = Map(map, 300, 0, 500, 500)
 
 #Run the mainloop
