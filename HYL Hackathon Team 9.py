@@ -156,7 +156,6 @@ y=0
 from tkinter import *
 from tkinter import ttk
 n= ttk.Notebook()
-f1= ttk.Frame(n)
 f2= ttk.Frame(n)
 f3= ttk.Frame(n)
 f4= ttk.Frame(n)
@@ -167,27 +166,16 @@ window= ttk.Frame(n)
 
 def main(x):
     global total
-    n.add(f1, text="1")
-    n.add(f2, text="2")
-    n.add(f3, text="3")
-    n.add(f4, text="4")
+    n.add(f2, text="Info")
+    n.add(f3, text="1")
+    n.add(f4, text="2")
 
 
     total= ttk.Label(window, text="0")
 
-    Label(f1,  text='insert para related to topic here').grid(row=1,column=2)
-    Label(f1, text="question 1").grid(row=2,column=2)
-    Button(f1, text="option 1 -correct").bind(correct)
-    Button(f1, text="option 1 -correct").grid(row=3,column=1)
-    Button(f1, text="option 2 - incorrect", command=incorrect).grid(row=3,column=2)
-    Button(f1, text="option 3 - incorrect", command=incorrect).grid(row=3,column=3)
 
+    Label(f2, text="*insert para here*").grid(row=2,column=2)
 
-    Label(f2, text="What is Turtle?").grid(row=2,column=2)
-    Button(f2, 
-    text="GuidedUserInterface",command=incorrect2).grid(row=3,column=1)
-    Button(f2, text="Module", command=correct2).grid(row=3,column=2)
-    Button(f2, text="Boolean Value", command=incorrect2).grid(row=3,column=3)
 
     Label(f3, text="What does the 'Print' command do?").grid(row=2,column=2)
     Button(f3, text="Creater a window",command=incorrect3).grid(row=3,column=1)
@@ -247,4 +235,5 @@ main(y)
 n.pack()
 
 n.mainloop()
+
 '''
