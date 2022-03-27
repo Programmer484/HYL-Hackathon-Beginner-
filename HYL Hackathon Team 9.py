@@ -64,7 +64,7 @@ class Unit(pygame.sprite.Sprite):
 
 class Player(Unit):
   def __init__(self, img, x, y, scale):
-  	Unit.__init__(self, img, x, y, scale)
+    Unit.__init__(self, img, x, y, scale)
 
 		
   def update(self):
@@ -72,19 +72,19 @@ class Player(Unit):
 		pass
       
   def controller(self):
-		input_box1 = InputBox(100, 100, 140, 32)
-		#e.g console input could be like: "player.move(left, 3)"
+    input_box1 = InputBox(100, 100, 140, 32)
+    #e.g console input could be like: "player.move(left, 3)"
 
 		
   def move(self, direction, distance):
     if direction == "left":
-			self.rect.x += distance * 25
-		elif direction == "right":
-			self.rect.x -= distance * 25
-		elif direction == "down":
-			self.rect.y += distance * 25
-		elif direction == "up":
-			self.rect.y -= distance * 25
+	    self.rect.x += distance * 25
+    elif direction == "right":
+	    self.rect.x -= distance * 25
+    elif direction == "down":
+	    self.rect.y += distance * 25
+    elif direction == "up":
+	    self.rect.y -= distance * 25
 			
   def attack(self):
     pass
